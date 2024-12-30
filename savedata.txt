@@ -1,0 +1,9 @@
+def save_geojson_file_to_mongodb(file_path):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as geojson_file:
+            geojson_data = json.load(geojson_file)
+            collection.insert_one(geojson_data)
+            print("GeoJSON data saved to MongoDB successfully.")
+    except Exception as e:
+        print(f"Error while saving GeoJSON to MongoDB: {e}")
+ # save_geojson_file_to_mongodb('./map.geojson')
